@@ -9,6 +9,7 @@ public class Tamagotchi
   private bool isAlive;
   private Random generator;
   public string name;
+  public int Boom;
 
   public Tamagotchi()
   {
@@ -50,9 +51,18 @@ public class Tamagotchi
     }
   }
 
+  public void nitro()
+  {
+    Boom += 1;
+    if (Boom > 5)
+    {
+      isAlive = false;
+    }
+  }
+
   public void PrintStats()
   {
-    Console.WriteLine($"Name: {name} || Hunger: {hunger} || Boredom: {boredom} || Vocabulary: {words.Count} words");
+    Console.WriteLine($"Name: {name} || Hunger: {hunger} || Boredom: {boredom} || Vocabulary: {words.Count} words || Nitroglycerine {Boom}");
   }
 
   public bool GetAlive()
